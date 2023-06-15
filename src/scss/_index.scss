@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  display: grid;
+  place-items: center;
+  background-color: $off-white;
+  font-family: 'Poppins';
+  color: $off-black;
+}
+.container {
+  background-color: $white;
+  border-radius: 30px 30px 100px 30px;
+  padding: 20px;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
+  .birthday-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid $light-grey;
+    padding: 20px 20px 60px 20px;
+    label {
+      color: $smokey-grey;
+      font-weight: bold;
+      grid-row: 1;
+    }
+    input {
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      &[type='number'] {
+        max-width: 100px;
+        padding: 15px 10px;
+        border: 1px solid $light-grey;
+      }
+      &[type='submit'] {
+        position: absolute;
+        right: 44%;
+        bottom: 51%;
+        border: none;
+        border-radius: 50%;
+        width: 72px;
+        height: 72px;
+        outline: none;
+        cursor: pointer;
+        background-color: $purple;
+        &:hover {
+          background-color: $off-black;
+        }
+      }
+    }
+  }
+  .age {
+    display: grid;
+    place-items: center start;
+    padding-top: 60px;
+    h2 {
+      font-size: 3rem;
+      font-style: italic;
+      .number {
+        color: $purple;
+        font-weight: 800;
+        font-style: italic;
+      }
+    }
+  }
+}

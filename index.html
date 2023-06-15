@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <!-- <div id="app"></div> -->
+    <main class="container">
+      <form class="birthday-form">
+        <label for="day-field">DAY</label>
+          <input type="number" placeholder="DD" id="day-field">
+        <label for="month-field">MONTH</label>
+          <input type="number" placeholder="MM" id="month-field">
+        <label for="year-field">YEAR</label>
+          <input type="number" placeholder="YYYY" id="year-field">
+        <input type="submit" value="">
+      </form>
+      <div class="age">
+        <h2><span class="number">--</span> years</h2>
+        <h2><span class="number">--</span> months</h2>
+        <h2><span class="number">--</span> days</h2>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
