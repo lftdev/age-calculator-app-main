@@ -3,7 +3,7 @@ import './scss/style.scss'
 const fields: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[type="number"]')
 fields.forEach((field: HTMLInputElement) => {
   const today = new Date()
-  /* if (field.id == 'year-field')
+  if (field.id == 'year-field')
     field.oninput = (event: Event) => {
       const target = event.target as HTMLInputElement
       const value = target.value
@@ -17,7 +17,7 @@ fields.forEach((field: HTMLInputElement) => {
       const value = target.value
       if (value.length > 2)
         target.value = value.substring(0, 2)
-    } */
+    }
 })
 const birthday_form = document.querySelector('.birthday-form') as HTMLFormElement
 birthday_form.onsubmit = ((event: SubmitEvent) => {
