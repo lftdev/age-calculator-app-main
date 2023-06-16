@@ -1,13 +1,12 @@
 import './scss/style.scss'
-
-const fields: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[type="number"]')
+const TODAY = new Date()
+const fields: HTMLInputElement[] = Array.from(document.querySelectorAll('input[type="number"]'))
 fields.forEach((field: HTMLInputElement) => {
-  const today = new Date()
   if (field.id == 'year-field')
     field.oninput = (event: Event) => {
       const target = event.target as HTMLInputElement
       const value = target.value
-      const year = today.getFullYear()
+      const year = TODAY.getFullYear()
       if (parseInt(value) > year)
         target.value = year.toString()
     }
@@ -19,16 +18,18 @@ fields.forEach((field: HTMLInputElement) => {
         target.value = value.substring(0, 2)
     }
 })
+function getBirthdayFromInputs() {
+  const [bday, bmth, byr] = fields.map((field: HTMLInputElement) => parseInt(field.value))
+  return new Date(byr, bmth - 1, bday)
+}
 const birthday_form = document.querySelector('.birthday-form') as HTMLFormElement
 birthday_form.onsubmit = ((event: SubmitEvent) => {
   event.preventDefault()
-  const today = new Date()
-  const [day_field, month_field, year_field] = fields
-  let year = today.getFullYear() - parseInt(year_field.value)
-  const month = (today.getMonth() + 1) - parseInt(month_field.value)
-  const day = today.getDate() - parseInt(day_field.value)
-  const [span_years, span_months, span_days] = document.querySelectorAll('span.number') as NodeListOf<HTMLSpanElement>
-  span_days.innerHTML = `${day < 0? 0 : day}`
-  span_months.innerHTML = `${month < 0? 0 : month}`
-  span_years.innerHTML = `${year}`
+  const birthday = getBirthdayFromInputs()
+  const difference = new Date(Date.UTC(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate()) - birthday.getTime())
+  const years = Math.floor(((((difference.getTime() / 1000) / 60) / 60) / 24) / 365)
+  const [span_years, span_months, span_days] = (document.querySelectorAll('span.number') as NodeListOf<HTMLSpanElement>)
+  span_days.innerHTML = `${difference.getDate()}`
+  span_months.innerHTML = `${difference.getMonth()}`
+  span_years.innerHTML = `${years}`
 })

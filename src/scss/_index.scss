@@ -13,6 +13,10 @@ body {
   font-family: 'Poppins';
   color: $off-black;
 }
+a {
+  text-decoration: none;
+  color: $purple;
+}
 .container {
   background-color: $white;
   border-radius: 30px 30px 100px 30px;
@@ -28,6 +32,24 @@ body {
       color: $smokey-grey;
       font-weight: bold;
       grid-row: 1;
+      &.arrow-icon {
+        &:before {
+          content: '';
+          position: absolute;
+          right: 44%;
+          bottom: 51%;
+          border: none;
+          border-radius: 50%;
+          width: 72px;
+          height: 72px;
+          outline: none;
+          cursor: pointer;
+          background-color: $purple;
+          &:hover {
+            background-color: $off-black;
+          }  
+        }
+      }
     }
     input {
       font-family: inherit;
@@ -38,8 +60,13 @@ body {
         max-width: 100px;
         padding: 15px 10px;
         border: 1px solid $light-grey;
+        &:focus {
+          border-color: $purple;
+          outline: none;
+          caret-color: $purple;
+        }
       }
-      &[type='submit'] {
+      /* &[type='submit'] {
         position: absolute;
         right: 44%;
         bottom: 51%;
@@ -53,7 +80,7 @@ body {
         &:hover {
           background-color: $off-black;
         }
-      }
+      } */
     }
   }
   .age {
