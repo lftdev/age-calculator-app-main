@@ -1,0 +1,28 @@
+@media (width >= 1100px) {
+  .container {
+    min-width: 700px;
+    padding-right: 100px;
+    .birthday-form {
+      label {
+        &.arrow-icon {
+          width: 120px;
+          height: 120px;
+          right: 26%;
+          bottom: 55%;
+        }
+      }
+      input {
+        &[type='number'] {
+          max-width: 125px;
+        }
+      }
+    }
+    .age {
+      h2 {
+        font-size: 6rem;
+        font-weight: 800;
+        line-height: 100px;
+      }
+    }
+  }
+}
