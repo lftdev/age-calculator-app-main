@@ -32,22 +32,23 @@ a {
       color: $smokey-grey;
       font-weight: bold;
       grid-row: 1;
+      &.invalid {
+        color: $light-red;
+      }
       &.arrow-icon {
-        &:before {
-          content: '';
-          position: absolute;
-          right: 44%;
-          bottom: 51%;
-          border: none;
-          border-radius: 50%;
-          width: 72px;
-          height: 72px;
-          outline: none;
-          cursor: pointer;
-          background-color: $purple;
-          &:hover {
-            background-color: $off-black;
-          }  
+        content: '';
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        right: 45%;
+        bottom: 55%;
+        border: none;
+        border-radius: 50%;
+        background: url(./assets/images/icon-arrow.svg) center center no-repeat;
+        cursor: pointer;
+        background-color: $purple;
+        &:hover {
+          background-color: $off-black;
         }
       }
     }
@@ -60,27 +61,29 @@ a {
         max-width: 100px;
         padding: 15px 10px;
         border: 1px solid $light-grey;
+        &.invalid {
+          border-color: $light-red;
+          color: $light-red;
+        }
         &:focus {
           border-color: $purple;
           outline: none;
           caret-color: $purple;
         }
       }
-      /* &[type='submit'] {
-        position: absolute;
-        right: 44%;
-        bottom: 51%;
-        border: none;
-        border-radius: 50%;
-        width: 72px;
-        height: 72px;
-        outline: none;
-        cursor: pointer;
-        background-color: $purple;
-        &:hover {
-          background-color: $off-black;
-        }
-      } */
+      &[type='submit'] {
+        display: none;
+      }
+    }
+    p {
+      grid-row: 3;
+      max-width: 100px;
+      &.invalid {
+        font-size: 14px;
+        color: $light-red;
+        font-style: italic;
+
+      }
     }
   }
   .age {
