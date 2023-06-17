@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- [Go to solution](#) (Not added yet)
+- [Go to solution](https://www.frontendmentor.io/solutions/agecalculatorappmain-ts-sass-vite-K7vQolPw1i)
 - [Go to live site](https://hydrae-soft.github.io/age-calculator-app-main/)
 
 ## My process
@@ -48,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-- Not added yet.
+- Basic errors handling.
 
 ## Author
 

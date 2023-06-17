@@ -28,62 +28,68 @@ a {
     gap: 20px;
     border-bottom: 1px solid $light-grey;
     padding: 20px 20px 60px 20px;
-    label {
-      color: $smokey-grey;
-      font-weight: bold;
-      grid-row: 1;
+    .form-column {
+      display: flex;
+      flex-direction: column;
       &.invalid {
-        color: $light-red;
-      }
-      &.arrow-icon {
-        content: '';
-        position: absolute;
-        width: 72px;
-        height: 72px;
-        right: 45%;
-        bottom: 55%;
-        border: none;
-        border-radius: 50%;
-        background: url(./assets/images/icon-arrow.svg) center center no-repeat;
-        cursor: pointer;
-        background-color: $purple;
-        &:hover {
-          background-color: $off-black;
+        label {
+          color: $light-red;
         }
-      }
-    }
-    input {
-      font-family: inherit;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      &[type='number'] {
-        max-width: 100px;
-        padding: 15px 10px;
-        border: 1px solid $light-grey;
-        &.invalid {
+        input[type='number'] {
           border-color: $light-red;
           color: $light-red;
         }
-        &:focus {
-          border-color: $purple;
-          outline: none;
-          caret-color: $purple;
+        p {
+          display: block;
         }
       }
-      &[type='submit'] {
-        display: none;
+      label {
+        color: $smokey-grey;
+        font-weight: bold;
       }
-    }
-    p {
-      grid-row: 3;
-      max-width: 100px;
-      &.invalid {
+      input {
+        font-family: inherit;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        &[type='number'] {
+          max-width: 100px;
+          padding: 15px 10px;
+          border: 1px solid $light-grey;
+          &:focus {
+            border-color: $purple;
+            outline: none;
+            caret-color: $purple;
+          }
+        }
+      }
+      p {
+        display: none;
+        max-width: 100px;
         font-size: 14px;
         color: $light-red;
         font-style: italic;
-
       }
+    }
+    .arrow-icon {
+      content: '';
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      top: calc(40% - 72px / 2);
+      left: calc(50% - 72px / 2);
+      border: none;
+      border-radius: 50%;
+      background: url(./assets/images/icon-arrow.svg) center center no-repeat;
+      cursor: pointer;
+      background-color: $purple;
+      transition: all .3s;
+      &:hover {
+        background-color: $off-black;
+      }
+    }
+    input[type='submit'] {
+      display: none;
     }
   }
   .age {
@@ -93,6 +99,7 @@ a {
     h2 {
       font-size: 3rem;
       font-style: italic;
+      line-height: 50px;
       .number {
         color: $purple;
         font-weight: 800;

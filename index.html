@@ -10,18 +10,24 @@
     <!-- <div id="app"></div> -->
     <main class="container">
       <form class="birthday-form">
-        <label for="day-field">DAY</label>
-        <input type="number" placeholder="DD" id="day-field">
-        <p class="invalid"></p>
-        <label for="month-field">MONTH</label>
-        <input type="number" placeholder="MM" id="month-field">
-        <p class="invalid"></p>
-        <label for="year-field">YEAR</label>
-        <input type="number" placeholder="YYYY" id="year-field">
-        <p class="invalid"></p>
+        <span id="day-input-column" class="form-column">
+          <label for="day-field">DAY</label>
+          <input type="number" placeholder="DD" id="day">
+          <p class="invalid"></p>
+        </span>
+        <span id="month-input-column" class="form-column">
+          <label for="month-field">MONTH</label>
+          <input type="number" placeholder="MM" id="month">
+          <p class="invalid"></p>
+        </span>
+        <span id="year-input-column" class="form-column">
+          <label for="year-field">YEAR</label>
+          <input type="number" placeholder="YYYY" id="year">
+          <p class="invalid"></p>
+        </span>
         <label for="submit" class="arrow-icon">
-          <input id="submit" type="submit" value="">
         </label>
+        <input id="submit" type="submit" value="">
       </form>
       <div class="age">
         <h2><span class="number">--</span> years</h2>

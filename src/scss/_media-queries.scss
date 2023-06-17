@@ -7,14 +7,18 @@
         &.arrow-icon {
           width: 120px;
           height: 120px;
-          right: 26%;
-          bottom: 55%;
+          top: calc(35% - 72px / 2);
+          left: calc(70% - 72px / 2);
         }
       }
       input {
         &[type='number'] {
           max-width: 125px;
         }
+      }
+      .arrow-icon {
+        top: 25%;
+        left: 65%;
       }
     }
     .age {
