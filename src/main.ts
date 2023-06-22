@@ -1,7 +1,7 @@
 import './scss/style.scss'
 import {NaNError, DayOutOfMonthLimitsError, InvalidMonthError, InvalidYearError} from './modules/errors'
 import { monthIsInFuture, exceedsMonthDays } from './modules/date-utils'
-const TODAY = new Date();
+const TODAY = new Date(Date.now());
 (document.getElementById('year') as HTMLInputElement).oninput = (event: Event) => {
   const target = event.target as HTMLInputElement
   const value = target.value
@@ -58,10 +58,16 @@ function validateInputs(inputs: ValidInputsFormat) {
   });
 }
 function calculate(birthday: Date) {
-  const difference = new Date(Date.UTC(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate()) - birthday.getTime()).getTime()
-  const days = ((((difference / 1000) / 60) / 60) / 24)
-  const years = Math.floor(days / 365)
-  const months = Math.floor((days / (365 / 12)) - 12 * years)
+  // Get birthday and today's date difference in milliseconds per day
+  const daysInMills = (((new Date(Date.UTC(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate()) - birthday.getTime()).getTime() / 1000) / 60) / 60) / 24
+  const years = Math.floor(daysInMills / 365)
+  // Get remaining months after the birthday
+  const months = Math.floor((daysInMills / (365 / 12)) - 12 * years)
+  // Get remaining days after the birthday
+  const days = Math.floor(daysInMills - 365 * years - (365 / 12) * months)
+  printResult(days, months, years)
+}
+function printResult(days: number, months: number, years: number) {
   const [span_years, span_months, span_days] = (document.querySelectorAll('span.number') as NodeListOf<HTMLSpanElement>)
   span_days.innerHTML = `${days}`
   span_months.innerHTML = `${months}`
@@ -88,7 +94,7 @@ function calculate(birthday: Date) {
       case 'DayOutOfMonthLimitsError': {
         const column = document.querySelector('#day-input-column') as HTMLSpanElement
         column.classList.add('invalid');
-        (column.lastElementChild as HTMLParagraphElement).innerHTML = 'You must enter a number.'
+        (column.lastElementChild as HTMLParagraphElement).innerHTML = 'Input .'
         break
       }
       case 'InvalidMonthError': {
