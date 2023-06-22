@@ -58,11 +58,13 @@ function validateInputs(inputs: ValidInputsFormat) {
   });
 }
 function calculate(birthday: Date) {
-  const difference = new Date(Date.UTC(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate()) - birthday.getTime())
-  const years = Math.floor(((((difference.getTime() / 1000) / 60) / 60) / 24) / 365)
+  const difference = new Date(Date.UTC(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate()) - birthday.getTime()).getTime()
+  const days = ((((difference / 1000) / 60) / 60) / 24)
+  const years = Math.floor(days / 365)
+  const months = Math.floor((days / (365 / 12)) - 12 * years)
   const [span_years, span_months, span_days] = (document.querySelectorAll('span.number') as NodeListOf<HTMLSpanElement>)
-  span_days.innerHTML = `${difference.getDate()}`
-  span_months.innerHTML = `${difference.getMonth()}`
+  span_days.innerHTML = `${days}`
+  span_months.innerHTML = `${months}`
   span_years.innerHTML = `${years}`
 }
 (document.querySelector('.birthday-form') as HTMLFormElement).onsubmit = ((event: SubmitEvent) => {
