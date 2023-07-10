@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body {
+  height: 100%;
+}
+:root {
+  @apply bg-gray-700;
+}
+.invalid input {
+  @apply border-red-600
+}
+.invalid p {
+  @apply text-red-600
+}
