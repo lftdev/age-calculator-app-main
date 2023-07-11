@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Age calculator app</title>
+    <script type="module" crossorigin src="/assets/index-b1b25151.js"></script>
+    <link rel="stylesheet" href="/assets/index-f321e342.css">
+  </head>
+  <body>
+    <main class="grid place-items-center h-full bg-slate-300">
+      <form id="birthday-form" class="grid grid-cols-3">
+        <span id="day-input-column">
+          <label>
+            DAY
+            <input type="number" placeholder="DD" id="day">
+          </label>
+          <p class="text-red-600"></p>
+        </span>
+        <span id="month-input-column">
+          <label>
+            MONTH
+            <input type="number" placeholder="MM" id="month">
+          </label>
+          <p class="text-red-600"></p>
+        </span>
+        <span id="year-input-column">
+          <label>
+            YEAR
+            <input type="number" placeholder="YYYY" id="year">
+          </label>
+          <p class="text-red-600"></p>
+        </span>
+        <label>
+          <input id="submit" type="submit" value="submit" class="bg-pink-500 text-white">
+        </label>
+      </form>
+      <div class="age">
+        <h2><span class="number">--</span> years</h2>
+        <h2><span class="number">--</span> months</h2>
+        <h2><span class="number">--</span> days</h2>
+      </div>
+    </main>
+    
+  </body>
+</html>
