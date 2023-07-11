@@ -10,6 +10,3 @@ html, body {
 .invalid input {
   @apply border-red-600
 }
-.invalid p {
-  @apply text-red-600
-}
