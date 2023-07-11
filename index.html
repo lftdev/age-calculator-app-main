@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+    <title>Age calculator app</title>
   </head>
-  <body>
-    <!-- <div id="app"></div> -->
-    <main class="container">
-      <form class="birthday-form">
-        <span id="day-input-column" class="form-column">
-          <label for="day-field">DAY</label>
-          <input type="number" placeholder="DD" id="day">
-          <p class="invalid"></p>
+  <body class="grid place-items-center p-8 bg-gray-200 h-full">
+    <main class="bg-white p-8">
+      <form id="birthday-form" class="grid grid-cols-3">
+        <span id="day-input-column">
+          <label class="font-semibold text-gray-500">
+            DAY
+            <input type="number" placeholder="DD" id="day">
+          </label>
+          <p class="text-red-600"></p>
         </span>
-        <span id="month-input-column" class="form-column">
-          <label for="month-field">MONTH</label>
-          <input type="number" placeholder="MM" id="month">
-          <p class="invalid"></p>
+        <span id="month-input-column">
+          <label class="font-semibold text-gray-500">
+            MONTH
+            <input type="number" placeholder="MM" id="month">
+          </label>
+          <p class="text-red-600"></p>
         </span>
-        <span id="year-input-column" class="form-column">
-          <label for="year-field">YEAR</label>
-          <input type="number" placeholder="YYYY" id="year">
-          <p class="invalid"></p>
+        <span id="year-input-column">
+          <label class="font-semibold text-gray-500">
+            YEAR
+            <input type="number" placeholder="YYYY" id="year">
+          </label>
+          <p class="text-red-600"></p>
         </span>
-        <label for="submit" class="arrow-icon">
+        <label class="rounded-full bg-[url('/assets/images/icon-arrow.svg')] bg-purple-600 bg-center bg-no-repeat w-16 h-16 hover:bg-black">
+          <input id="submit" type="submit" value="">
         </label>
-        <input id="submit" type="submit" value="">
       </form>
       <div class="age">
-        <h2><span class="number">--</span> years</h2>
-        <h2><span class="number">--</span> months</h2>
-        <h2><span class="number">--</span> days</h2>
+        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> years</h2>
+        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> months</h2>
+        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> days</h2>
       </div>
     </main>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./src/main.ts"></script>
   </body>
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/hydrae-soft">hydrae-soft</a>.
-  </footer>
 </html>
