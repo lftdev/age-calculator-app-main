@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
     <title>Age calculator app</title>
-    <script type="module" crossorigin src="./assets/index-b1b25151.js"></script>
-    <link rel="stylesheet" href="./assets/index-f321e342.css">
+    <script type="module" crossorigin src="/assets/index-6927a132.js"></script>
+    <link rel="stylesheet" href="/assets/index-b6aa7a2d.css">
   </head>
-  <body>
-    <main class="grid place-items-center h-full bg-slate-300">
+  <body class="grid place-items-center p-8 bg-gray-200 h-full">
+    <main class="bg-white p-8">
       <form id="birthday-form" class="grid grid-cols-3">
         <span id="day-input-column">
-          <label>
+          <label class="font-semibold text-gray-500">
             DAY
             <input type="number" placeholder="DD" id="day">
           </label>
           <p class="text-red-600"></p>
         </span>
         <span id="month-input-column">
-          <label>
+          <label class="font-semibold text-gray-500">
             MONTH
             <input type="number" placeholder="MM" id="month">
           </label>
           <p class="text-red-600"></p>
         </span>
         <span id="year-input-column">
-          <label>
+          <label class="font-semibold text-gray-500">
             YEAR
             <input type="number" placeholder="YYYY" id="year">
           </label>
           <p class="text-red-600"></p>
         </span>
-        <label>
-          <input id="submit" type="submit" value="submit" class="bg-pink-500 text-white">
+        <label class="rounded-full bg-[url('/assets/images/icon-arrow.svg')] bg-purple-600 bg-center bg-no-repeat w-16 h-16 hover:bg-black">
+          <input id="submit" type="submit" value="">
         </label>
       </form>
       <div class="age">
-        <h2><span class="number">--</span> years</h2>
-        <h2><span class="number">--</span> months</h2>
-        <h2><span class="number">--</span> days</h2>
+        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> years</h2>
+        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> months</h2>
+        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> days</h2>
       </div>
     </main>
     
