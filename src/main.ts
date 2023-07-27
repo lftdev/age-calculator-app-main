@@ -35,10 +35,12 @@ function parseInputs () {
     year: 0
   }
   document.querySelectorAll('input[type="number"]')
-    .forEach(field => {
-      const value = parseInt(field?.value)
-      if (isNaN(value)) throw new NaNError(field.id)
-      else numericInputs[field.id] = value
+    .forEach((field) => {
+      if (field instanceof HTMLInputElement) {
+        const value = parseInt(field.value)
+        if (isNaN(value)) throw new NaNError(field.id)
+        else numericInputs[field.id] = value
+      }
     })
   numericInputs.month--
   return numericInputs
