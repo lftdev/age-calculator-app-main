@@ -10,37 +10,41 @@
     <title>Frontend Mentor | Age calculator app</title>
   </head>
   <body class="grid place-items-center p-8 bg-gray-200 h-full">
-    <main class="bg-white p-8">
-      <form id="birthday-form" class="grid grid-cols-3">
-        <span id="day-input-column">
-          <label class="font-semibold text-gray-500">
-            DAY
-            <input type="number" placeholder="DD" id="day">
+    <main class="flex flex-col justify-between bg-white p-8 [border-radius:15px_15px_100px_15px]">
+      <form id="birthday-form">
+        <div class="grid grid-cols-3 gap-2">
+          <span class="" id="day-input-column">
+            <label class="font-semibold text-gray-500">
+              <div>DAY</div>
+              <input class="max-w-full p-5 border rounded-md tablet:w-28 text-black" type="number" placeholder="DD" id="day">
+            </label>
+            <p class="text-red-600"></p>
+          </span>
+          <span class="" id="month-input-column">
+            <label class="font-semibold text-gray-500">
+              <div>MONTH</div>
+              <input class="max-w-full p-5 border rounded-md tablet:w-28 text-black" type="number" placeholder="MM" id="month">
+            </label>
+            <p class="text-red-600"></p>
+          </span>
+          <span class="" id="year-input-column">
+            <label class="font-semibold text-gray-500">
+              <div>YEAR</div>
+              <input class="max-w-full p-5 border rounded-md tablet:w-28 text-black" type="number" placeholder="YYYY" id="year">
+            </label>
+            <p class="text-red-600"></p>
+          </span>
+        </div>
+        <div class="flex justify-end">
+          <label class="rounded-full bg-[url('/images/icon-arrow.svg')] bg-purple-600 bg-center bg-no-repeat m-6 p-10 w-1 h-1 hover:bg-black hover:cursor-pointer">
+            <input id="submit" type="submit" value="">
           </label>
-          <p class="text-red-600"></p>
-        </span>
-        <span id="month-input-column">
-          <label class="font-semibold text-gray-500">
-            MONTH
-            <input type="number" placeholder="MM" id="month">
-          </label>
-          <p class="text-red-600"></p>
-        </span>
-        <span id="year-input-column">
-          <label class="font-semibold text-gray-500">
-            YEAR
-            <input type="number" placeholder="YYYY" id="year">
-          </label>
-          <p class="text-red-600"></p>
-        </span>
-        <label class="rounded-full bg-[url('/images/icon-arrow.svg')] bg-purple-600 bg-center bg-no-repeat w-16 h-16 hover:bg-black">
-          <input id="submit" type="submit" value="">
-        </label>
+        </div>
       </form>
       <div class="age">
-        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> years</h2>
-        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> months</h2>
-        <h2 class="font-black text-4xl"><span class="number text-purple-600">--</span> days</h2>
+        <h2 class="font-black text-4xl tablet:text-6xl"><span class="number text-purple-600">--</span> years</h2>
+        <h2 class="font-black text-4xl tablet:text-6xl"><span class="number text-purple-600">--</span> months</h2>
+        <h2 class="font-black text-4xl tablet:text-6xl"><span class="number text-purple-600">--</span> days</h2>
       </div>
     </main>
     <script type="module" src="./src/main.ts"></script>
